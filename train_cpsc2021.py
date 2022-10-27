@@ -20,19 +20,19 @@ def train():
     ds_test = CPSC2021(TrainCfg, training=False, task=task, lazy=False, test=True)
 
     train_config = deepcopy(TrainCfg)
-    train_config[task].model_name = "cnn_phc"  # "cnn", "cnn_phc"
+    train_config[task].model_name = "seq_lab_phc"  # "seq_lab", "seq_lab_phc"
     train_config[task].cnn_name = "resnetNS"  # "multi_scopic", "resnetNS", "densenet_vanilla"
     train_config[task].attn_name = "se"  # "se", "none"
     train_config.n_leads = 2
 
     _set_task(task, train_config)
     model_config = deepcopy(ModelCfg[task])
-    model_config[task].cnn_name = train_config.cnn_name
-    model_config[task].attn_name = train_config.attn_name
-    model_config[task].seq_lab.cnn.name = model_config[task].cnn_name
-    model_config[task].seq_lab.attn.name = model_config[task].attn_name
-    model_config[task].seq_lab_phc.cnn.name = model_config[task].cnn_name
-    model_config[task].seq_lab_phc.attn.name = model_config[task].attn_name
+    model_config.cnn_name = train_config[task].cnn_name
+    model_config.attn_name = train_config[task].attn_name
+    model_config.seq_lab.cnn.name = model_config.cnn_name
+    model_config.seq_lab.attn.name = model_config.attn_name
+    model_config.seq_lab_phc.cnn.name = model_config.cnn_name
+    model_config.seq_lab_phc.attn.name = model_config.attn_name
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(f"Using {device} device")
