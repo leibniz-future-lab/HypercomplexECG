@@ -6,7 +6,7 @@ from torch_ecg.cfg import set_seed, DEFAULTS
 from cpsc2018.dataset import CPSC2018
 from cpsc2018.trainer import CINC2020Trainer, _MODEL_MAP
 from cpsc2018.cfg import TrainCfg, ModelCfg
-from .utils import count_params
+from utils.utils import count_params
 
 
 def train():

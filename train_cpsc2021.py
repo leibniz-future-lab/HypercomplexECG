@@ -5,7 +5,7 @@ from torch_ecg.cfg import set_seed, DEFAULTS
 from cpsc2021.dataset import CPSC2021
 from cpsc2021.trainer import CPSC2021Trainer, _set_task, _MODEL_MAP
 from cpsc2021.cfg import TrainCfg, ModelCfg
-from .utils import count_params
+from utils.utils import count_params
 
 def train():
 
