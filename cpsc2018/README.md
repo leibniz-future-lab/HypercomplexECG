@@ -1,6 +1,6 @@
-# [PhysioNet/CinC Challenge 2020](https://physionetchallenges.github.io/2020/)
+# [CPSC 2018](https://physionetchallenges.github.io/2020/)
 
-### Dataset from China Physiological Signal Challenge (CPSC) 2018
+### Dataset from the China Physiological Signal Challenge (CPSC) 2018
 
 F. Liu, C. Liu, L. Zhao, X. Zhang, X.Wu, X. Xu, Y. Liu, C. Ma,
 S. Wei, Z. He et al., “An open access database for evaluating
@@ -23,6 +23,7 @@ Components of a new research resource for complex
 physiologic signals,” Circulation, vol. 101, no. 23, pp. e215–e220, 2000.
 
 ---------
+
 Code adapted from torch_ecg repository at https://github.com/DeepPSP/torch_ecg/tree/master/benchmarks/train_crnn_cinc2020
 
 H. Wen and J. Kang, “torch ecg: An ECG deep learning framework implemented using PyTorch,” 2022. [Online].
