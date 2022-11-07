@@ -14,7 +14,7 @@ def train():
     CINC2020Trainer.__DEBUG__ = False
     CPSC2018.__DEBUG__ = False
 
-    TrainCfg.db_dir = "/home/basso/data/PhysioNetChallenge2020/Training_WFDB"
+    TrainCfg.db_dir = "/home/basso/data/CinC_2020/Training_WFDB"
     ds_train = CPSC2018(TrainCfg, training=True, lazy=False)
     ds_val = CPSC2018(TrainCfg, training=False, lazy=False)
     ds_test = CPSC2018(TrainCfg, training=False, lazy=False, test=True)

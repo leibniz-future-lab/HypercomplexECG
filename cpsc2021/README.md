@@ -1,5 +1,7 @@
 # [CPSC2021](http://2021.icbeb.org/CPSC2021)
 
+### Dataset from China Physiological Signal Challenge (CPSC) 2021
+
 X. Wang, C. Ma, X. Zhang, H. Gao, G. D. Clifford,
 and C. Liu, “Paroxysmal atrial fibrillation events detection
 from dynamic ECG recordings: The 4th China Physiological
@@ -12,7 +14,9 @@ Available: https://github.com/DeepPSP/torch_ecg
 
 H. Wen and J. Kang, “A novel deep learning package for electrocardiography research,” Physiological Measurement, pp. 1–29, 2022.
 
-## Offline generated training data
+----------------
+
+### Offline generated training data
 
 [CPSC2021-sliced](https://www.kaggle.com/wenh06/cpsc2021-sliced) on Kaggle.
 

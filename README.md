@@ -2,7 +2,7 @@
 
 This is a Python and PyTorch code for the PH-CNN framework in our paper:
 
-L. Basso, Z. Ren and W. Nejdl, 
+>L. Basso, Z. Ren and W. Nejdl, 
 "Towards Efficient ECG-based Atrial Fibrillation Detection via Parameterised Hypercomplex Neural Networks", 2022.
 
 ### Abstract:
@@ -22,7 +22,9 @@ We evaluate PH-CNNs on publicly available databases of dynamic and in-hospital
 ECG recordings and show comparable performance to corresponding real-valued 
 CNNs while using approx. 1/n model parameters.
 
-### Tests on CPSC 2018 and 2021 data
+----------------
+
+### Experiments on CPSC 2018 and 2021 data
 
 CPSC 2018:
 `python train_cpsc2018.py`
@@ -30,7 +32,32 @@ CPSC 2018:
 CPSC 2021:
 `python train_cpsc2021.py`
 
-Parameters can be adapted in `cfg.py` files.
+Attributes for `train_config` and `model_config` can be adapted in these files or in `cfg.py` files.
+
+| Parameter                | Attribute Name | Options                                        |
+|--------------------------|----------------|------------------------------------------------|
+| Real-valued or PHC model | model_name     | "cnn", "cnn_phc"                               |
+| CNN module               | cnn_name       | "multi_scopic", "resnetNS", "densenet_vanilla" |
+| Attention module         | attn_name      | "se", "none"                                   |
+| Dimensionality           | n_leads        | CPSC 2021: 2, 4 <br/> CPSC 2018: 12            |
+
+Proposed PH-CNN architecture:
+
+![DCNN Architecture](/images/dcnn.png?raw=true "DCNN Architecture")
+
+It includes three modules: (1) a CNN, (2) a squeeze-and excitation (SE) attention, and (3) a
+multilayer perceptron (MLP) classifier. Compared to real-valued
+DNNs, parameterised hypercomplex (PH) convolution and multiplication
+replace real-valued convolutional and fully-connected (FC)
+layers, respectively. We construct separate models for two tasks: (a)
+AF detection, where every sampling point of the input ECG signal
+gets classified as AF/non-AF, and (b) global abnormality classification,
+where the output is a vector of class probabilities.
+
+Implemented and tested PH-CNN backbones:
+* [Multi-Scopic CNN](https://ieeexplore.ieee.org/abstract/document/9099511)
+* [ResNet](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html) with separable convolutions
+* [DenseNet](https://openaccess.thecvf.com/content_cvpr_2017/html/Huang_Densely_Connected_Convolutional_CVPR_2017_paper.html)
 
 ---
 Code adapted from benchmark test from torch_ecg repository at https://github.com/DeepPSP/torch_ecg/tree/master/benchmarks

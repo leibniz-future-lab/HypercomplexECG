@@ -23,7 +23,7 @@ def train():
     train_config[task].model_name = "seq_lab_phc"  # "seq_lab", "seq_lab_phc"
     train_config[task].cnn_name = "resnetNS"  # "multi_scopic", "resnetNS", "densenet_vanilla"
     train_config[task].attn_name = "se"  # "se", "none"
-    train_config.n_leads = 2
+    train_config.n_leads = 2  # 2, 4 (dimensionality n can be adapted for PHC)
 
     _set_task(task, train_config)
     model_config = deepcopy(ModelCfg[task])
